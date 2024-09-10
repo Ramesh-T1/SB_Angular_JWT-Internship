@@ -1,0 +1,26 @@
+<div class="alert alert-success" *ngIf="msg">{{msg}}</div>
+<table class="table table-striped">
+	<thead>
+		<th>Id</th>
+		<th>Name</th>
+		<th>ContactDetails</th>
+		<th>Address</th>
+		<th>Pincode</th>
+		<th>Delete</th>
+		<th>Update</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="let data of listOfStudents">
+		<td>{{data.id}}</td>
+		<td>{{data.name}}</td>
+		<td>{{data.contactdetails}}</td>
+		<td>{{data.address}}</td>
+		<td>{{data.pincode}}</td>
+		<td><button class="btn btn-danger" (click)="deleteRecord(data.id)">Delete</button></td>
+		<td><button class="btn btn-warning" (click)="updateRecord(data.id)">Update</button></td>
+		</tr>
+	</tbody>
+</table>
+<div class="row">
+	<button class="btn btn-success" (click)="register()">Register</button>
+</div>

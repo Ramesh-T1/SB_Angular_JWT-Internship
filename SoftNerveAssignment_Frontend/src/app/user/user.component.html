@@ -1,0 +1,42 @@
+<h2>Add Student</h2>
+<div class="alert alert-warning" *ngIf="StudentForm.dirty && StudentForm.invalid">Please Enter correct Values for all field</div>
+<div class="alert alert-warning" *ngIf="StudentForm.dirty && ID.invalid">Please Enter correct ID</div>
+<div class="alert alert-warning" *ngIf="StudentForm.dirty && NAME.invalid">Please Enter correct NAME</div>
+<div class="alert alert-warning" *ngIf="StudentForm.dirty && CONTACT.invalid">Please Enter correct CONTACT DETAILS</div>
+<div class="alert alert-warning" *ngIf="StudentForm.dirty && ADDRESS.invalid">Please Enter correct ADDRESS</div>
+<div class="alert alert-warning" *ngIf="StudentForm.dirty && PINCODE.invalid">Please Enter correct PINCODE</div>
+<form (ngSubmit)="!StudentForm.invalid && saveUser()" #StudentForm="ngForm">
+<div class="container">
+
+<label>Id</label>
+<input [(ngModel)]="newStudent.id" type="number" class="form-control" name="id" id="uid" #ID="ngModel"/>
+<br/><br/>
+
+<label>Name</label>
+<input [(ngModel)]="newStudent.name" type="text" class="form-control" name="name" 
+id="n" required="required" #NAME="ngModel"/>
+<br/><br/>
+
+
+<label>Contact Details</label>
+<input [(ngModel)]="newStudent.contactdetails" type="number" class="form-control" name="contactdetails" 
+id="cd" required="required" #CONTACT="ngModel" minlength="10"/>
+<br/><br/>
+
+
+<label>Address</label>
+<input [(ngModel)]="newStudent.address" type="text" class="form-control" name="address" 
+id="addr" required="required" #ADDRESS="ngModel"/>
+<br/><br/>
+
+
+<label>Pincode</label>
+<input [(ngModel)]="newStudent.pincode" type="text" class="fomr-control" name="pincode" 
+id="pin" required="required" #PINCODE="ngModel" minlength="6"/>
+<br/><br/>
+
+<div>
+<button type="submit" class="btn btn-success">Save</button>
+</div>
+</div>
+</form>

@@ -1,0 +1,9 @@
+<div class="alert alert-warning" *ngIf="message">{{message}}</div>
+<label>Enter UserName</label>
+<input [(ngModel)]="username" type="text" name="username" id="usn" placeholder="Enter UserName"/>
+<br/><br/>
+<label>Enter Password</label>
+<input [(ngModel)]="password" type="password" name="password" id="upwd" placeholder="Enter Password"/>
+<br/><br/>
+<!--<input type="submit" value="Login" (click)="authernticateUser(username,password)">-->
+<input type="submit" value="Login" (click)="handleJWTAuthLogin()">
